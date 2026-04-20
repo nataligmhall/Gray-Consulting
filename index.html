@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gray Consulting and Management LLC — Strategy, Digital, Systems, and Products.">
+  <meta name="robots" content="index, follow">
+  <title>Gray — Consulting &amp; Management</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor dot" id="cursorDot"></div>
+  <div class="cursor ring" id="cursorRing"></div>
+
+  <!-- Background canvas -->
+  <canvas id="bgCanvas" class="bg-canvas"></canvas>
+
+  <div class="page">
+
+    <!-- ============================================================
+         NAV
+    ============================================================ -->
+    <nav class="nav" id="nav">
+      <a href="#" class="nav-brand">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 120 120" width="24" height="24" fill="currentColor">
+            <rect x="16" y="16" width="12" height="88" opacity="0.18" style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1)"/>
+            <rect x="34" y="19" width="12" height="82" opacity="0.38" style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1) 50ms"/>
+            <rect x="52" y="16" width="12" height="88" opacity="0.6"  style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1) 100ms"/>
+            <rect x="70" y="19" width="12" height="82" opacity="0.82" style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1) 150ms"/>
+            <rect x="88" y="16" width="12" height="88" opacity="1"    style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1) 200ms"/>
+          </svg>
+        </span>
+        <span class="name" id="navWordmark">Gray</span>
+        <span class="sep"></span>
+        <span class="tag">Consulting &amp; Management</span>
+      </a>
+      <div class="nav-links">
+        <a href="#work"><span class="idx">01</span>Work</a>
+        <a href="#capabilities"><span class="idx">02</span>Capabilities</a>
+        <a href="#contact"><span class="idx">03</span>Contact</a>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO — layout-c (minimalist center)
+    ============================================================ -->
+    <section class="hero layout-c" id="hero">
+      <div class="hero-inner">
+        <span class="hero-logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 120 120" width="180" height="180" fill="currentColor" class="spectrum-mark">
+            <rect x="16" y="16" width="12" height="88" opacity="0.18" style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1)"/>
+            <rect x="34" y="19" width="12" height="82" opacity="0.38" style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1) 50ms"/>
+            <rect x="52" y="16" width="12" height="88" opacity="0.6"  style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1) 100ms"/>
+            <rect x="70" y="19" width="12" height="82" opacity="0.82" style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1) 150ms"/>
+            <rect x="88" y="16" width="12" height="88" opacity="1"    style="transition:all 0.6s cubic-bezier(0.22,1,0.36,1) 200ms"/>
+          </svg>
+        </span>
+        <h1 class="hero-headline">We shape <em>what's</em><br>next.</h1>
+        <div class="hero-side">Consulting &amp; Management · Est. 2023</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TICKER
+    ============================================================ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Strategy</span><span class="sep">/</span>
+        <span>Digital</span><span class="sep">/</span>
+        <span>Systems</span><span class="sep">/</span>
+        <span>Products</span><span class="sep">/</span>
+        <span>Brand</span><span class="sep">/</span>
+        <span>Content</span><span class="sep">/</span>
+        <span>Platforms</span><span class="sep">/</span>
+        <span>Positioning</span><span class="sep">/</span>
+        <span>Strategy</span><span class="sep">/</span>
+        <span>Digital</span><span class="sep">/</span>
+        <span>Systems</span><span class="sep">/</span>
+        <span>Products</span><span class="sep">/</span>
+        <span>Brand</span><span class="sep">/</span>
+        <span>Content</span><span class="sep">/</span>
+        <span>Platforms</span><span class="sep">/</span>
+        <span>Positioning</span><span class="sep">/</span>
+        <span>Strategy</span><span class="sep">/</span>
+        <span>Digital</span><span class="sep">/</span>
+        <span>Systems</span><span class="sep">/</span>
+        <span>Products</span><span class="sep">/</span>
+        <span>Brand</span><span class="sep">/</span>
+        <span>Content</span><span class="sep">/</span>
+        <span>Platforms</span><span class="sep">/</span>
+        <span>Positioning</span><span class="sep">/</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         CAPABILITIES
+    ============================================================ -->
+    <section class="capabilities" id="capabilities">
+      <div class="container">
+        <div class="section-label reveal">
+          <span class="num">02</span>
+          <span>Capabilities</span>
+          <span class="line"></span>
+          <span>What we bring</span>
+        </div>
+        <div class="cap-head">
+          <h2 class="cap-title reveal">Four disciplines.<br><em>One operating system.</em></h2>
+          <p class="cap-intro reveal d1">We work across the full surface area of modern marketing — from brand foundations to the systems that ship every day. Hover any discipline to see what that means in practice.</p>
+        </div>
+        <div class="cap-grid">
+
+          <div class="cap-card reveal">
+            <div>
+              <div class="cap-num">— 01 /04</div>
+              <div class="cap-indicator"></div>
+            </div>
+            <div>
+              <h3 class="cap-name">Strategy</h3>
+              <p class="cap-desc">Clarity in complexity.</p>
+            </div>
+            <div class="cap-details">
+              <div><div class="cap-num">— 01 /04 · DETAILS</div></div>
+              <div>
+                <h3 class="cap-name">Strategy</h3>
+                <ul>
+                  <li><span>Positioning</span><span class="idx">01</span></li>
+                  <li><span>Narrative</span><span class="idx">02</span></li>
+                  <li><span>Go-to-market</span><span class="idx">03</span></li>
+                  <li><span>Audience</span><span class="idx">04</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cap-card reveal d1">
+            <div>
+              <div class="cap-num">— 02 /04</div>
+              <div class="cap-indicator"></div>
+            </div>
+            <div>
+              <h3 class="cap-name">Digital</h3>
+              <p class="cap-desc">Built to perform.</p>
+            </div>
+            <div class="cap-details">
+              <div><div class="cap-num">— 02 /04 · DETAILS</div></div>
+              <div>
+                <h3 class="cap-name">Digital</h3>
+                <ul>
+                  <li><span>Brand voice</span><span class="idx">01</span></li>
+                  <li><span>Content systems</span><span class="idx">02</span></li>
+                  <li><span>SEO</span><span class="idx">03</span></li>
+                  <li><span>Paid growth</span><span class="idx">04</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cap-card reveal d2">
+            <div>
+              <div class="cap-num">— 03 /04</div>
+              <div class="cap-indicator"></div>
+            </div>
+            <div>
+              <h3 class="cap-name">Systems</h3>
+              <p class="cap-desc">Structure that scales.</p>
+            </div>
+            <div class="cap-details">
+              <div><div class="cap-num">— 03 /04 · DETAILS</div></div>
+              <div>
+                <h3 class="cap-name">Systems</h3>
+                <ul>
+                  <li><span>Operations</span><span class="idx">01</span></li>
+                  <li><span>Content ops</span><span class="idx">02</span></li>
+                  <li><span>Analytics</span><span class="idx">03</span></li>
+                  <li><span>Playbooks</span><span class="idx">04</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cap-card reveal d3">
+            <div>
+              <div class="cap-num">— 04 /04</div>
+              <div class="cap-indicator"></div>
+            </div>
+            <div>
+              <h3 class="cap-name">Products</h3>
+              <p class="cap-desc">Ideas made real.</p>
+            </div>
+            <div class="cap-details">
+              <div><div class="cap-num">— 04 /04 · DETAILS</div></div>
+              <div>
+                <h3 class="cap-name">Products</h3>
+                <ul>
+                  <li><span>Product marketing</span><span class="idx">01</span></li>
+                  <li><span>Launches</span><span class="idx">02</span></li>
+                  <li><span>Packaging</span><span class="idx">03</span></li>
+                  <li><span>Research</span><span class="idx">04</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SELECTED WORK
+    ============================================================ -->
+    <section class="work" id="work">
+      <div class="container">
+        <div class="section-label reveal">
+          <span class="num">03</span>
+          <span>Selected Work</span>
+          <span class="line"></span>
+          <span>Recent / in-flight</span>
+        </div>
+        <div class="work-head">
+          <h2 class="work-title reveal"><em>Selected</em> work.</h2>
+          <div class="work-count reveal d1">5 engagements<br>— 2023 to present</div>
+        </div>
+        <div class="work-list">
+          <a class="work-row" href="/PolarBalance/">
+            <div class="idx">— 01</div>
+            <div class="name">Polar Balance</div>
+            <div class="work-meta">Owned Brand</div>
+            <div class="work-meta">Brand · Product · Digital</div>
+            <div class="arrow">↗</div>
+          </a>
+          <a class="work-row" href="/VivienneSabo/">
+            <div class="idx">— 02</div>
+            <div class="name">Vivienne Sabo</div>
+            <div class="work-meta">Beauty</div>
+            <div class="work-meta">Social · Community</div>
+            <div class="arrow">↗</div>
+          </a>
+          <a class="work-row" href="#">
+            <div class="idx">— 03</div>
+            <div class="name">Accel Club</div>
+            <div class="work-meta">E-commerce</div>
+            <div class="work-meta">Product · Social · Content</div>
+            <div class="arrow">↗</div>
+          </a>
+          <a class="work-row" href="#">
+            <div class="idx">— 04</div>
+            <div class="name">Flo</div>
+            <div class="work-meta">Health Tech</div>
+            <div class="work-meta">Content Strategy</div>
+            <div class="arrow">↗</div>
+          </a>
+          <a class="work-row" href="#">
+            <div class="idx">— 05</div>
+            <div class="name">Pawgress</div>
+            <div class="work-meta">Pet / DTC</div>
+            <div class="work-meta">Brand Voice · Strategy</div>
+            <div class="arrow">↗</div>
+          </a>
+        </div>
+      </div>
+      <div class="work-preview" id="workPreview">
+        <div class="work-preview-inner" id="workPreviewInner"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-label reveal">
+          <span class="num">04</span>
+          <span>Contact</span>
+          <span class="line"></span>
+          <span>Tell us what you're building</span>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <h2 class="contact-title reveal">Let's <em>connect.</em></h2>
+            <p class="contact-sub reveal d1">We're selective about the work we take on. Share a sketch, a deck, or a single sentence — we'll write back within three business days.</p>
+            <div class="contact-direct reveal d2">
+              <div class="k">Direct</div>
+              <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a>
+              <div class="k" style="margin-top:20px">Location</div>
+              <a href="#">United States · Remote-first</a>
+            </div>
+          </div>
+          <form class="contact-form reveal d1" id="contactForm" novalidate>
+            <div class="field">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" placeholder="Your name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" placeholder="you@company.com" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="fcompany">Company / context</label>
+              <input type="text" id="fcompany" placeholder="What are you building?">
+            </div>
+            <div class="field">
+              <label for="fmsg">Message</label>
+              <textarea id="fmsg" placeholder="Tell us more — a link, a brief, a question." required></textarea>
+            </div>
+            <div class="submit-row">
+              <div class="submit-note">Encrypted. No cookies, no tracking.</div>
+              <button type="submit" class="btn">
+                <span>Send Message</span>
+                <span class="arrow">→</span>
+              </button>
+            </div>
+            <div class="sent-msg" id="sentMsg">↪ Message sent. We'll be in touch.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg viewBox="0 0 120 120" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <rect x="16" y="16" width="12" height="88" opacity="0.18"/>
+          <rect x="34" y="19" width="12" height="82" opacity="0.38"/>
+          <rect x="52" y="16" width="12" height="88" opacity="0.6"/>
+          <rect x="70" y="19" width="12" height="82" opacity="0.82"/>
+          <rect x="88" y="16" width="12" height="88" opacity="1"/>
+        </svg>
+        <span>&copy; 2026 Gray Consulting &amp; Management LLC</span>
+      </div>
+      <div class="footer-links">
+        <a href="/PolarBalance/privacy">Privacy</a>
+        <a href="/PolarBalance/terms">Terms</a>
+        <a href="/PolarBalance/">Polar Balance ↗</a>
+      </div>
+      <div class="footer-right">United States · Est. 2023</div>
+    </footer>
+
+  </div><!-- /.page -->
+
+  <script src="script.js"></script>
+</body>
+</html>
