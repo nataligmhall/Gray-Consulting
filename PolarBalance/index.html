@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polar Balance — Mood &amp; Habit Tracker</title>
+  <meta name="description" content="Polar Balance is a personal mood and habit tracking app. Log your moods, build habits, and reflect on your wellbeing — privately and offline-first." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #141414;
+      --border: rgba(255,255,255,0.08);
+      --text: #e8e4de;
+      --muted: rgba(232,228,222,0.45);
+      --accent: #b8c5d0;
+      --highlight: #d4e0e8;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .header-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .header-nav a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .header-nav a:hover { color: var(--text); }
+
+    /* ── Hero ── */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 5rem;
+      gap: 2rem;
+    }
+
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07);
+      flex-shrink: 0;
+    }
+
+    .app-icon img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .app-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.75rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+
+    .app-tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .app-description {
+      max-width: 480px;
+      font-size: 1.05rem;
+      color: rgba(232,228,222,0.7);
+      line-height: 1.7;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Features ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 0 0 5rem;
+    }
+
+    .feature {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .feature:last-child { border-right: none; }
+
+    .feature-icon {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .feature-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── Developer block ── */
+    .developer {
+      text-align: center;
+      padding: 0 2rem 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .developer-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .developer-name {
+      font-size: 0.95rem;
+      color: rgba(232,228,222,0.6);
+    }
+
+    .developer-name a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(180,200,210,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .developer-name a:hover { border-color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+
+    footer nav { display: flex; gap: 2rem; }
+
+    footer nav a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer nav a:hover { color: var(--text); }
+
+    @media (max-width: 700px) {
+      header, footer { padding: 1.5rem 1.75rem; }
+      .hero { padding: 4rem 1.75rem 3.5rem; }
+      .features {
+        grid-template-columns: 1fr;
+      }
+      .feature {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 2rem 1.75rem;
+      }
+      .feature:last-child { border-bottom: none; }
+      .developer { padding: 3rem 1.75rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="header-brand">Polar Balance</span>
+    <nav class="header-nav">
+      <a href="/PolarBalance/support">Support</a>
+      <a href="/PolarBalance/privacy">Privacy</a>
+      <a href="/PolarBalance/terms">Terms</a>
+      <a href="mailto:contact@grayconsultingmanagement.com">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <!-- App icon — PNG penguin -->
+    <div class="app-icon">
+  <a href="https://apps.apple.com/us/app/polar-balance/id6760113310" target="_blank" rel="noopener noreferrer">
+  <img src="/PolarBalance/PolarBalance.png" alt="Polar Balance app icon" />
+  </a>
+</div>
+
+    <div class="hero-text">
+      <h1 class="app-name">Polar Balance</h1>
+      <p class="app-tagline">Mood &amp; Habit Tracker</p>
+      <p class="app-description">
+        A personal wellness app for logging your moods, building habits, and recording
+        daily notes — privately, offline-first, and entirely on your terms.
+      </p>
+    </div>
+
+  </section>
+
+  <div class="features">
+    <div class="feature">
+      <span class="feature-icon" aria-hidden="true" style="color:#b8c5d0;">◎</span>
+      <h2 class="feature-title">Mood Logging</h2>
+      <p class="feature-desc">Track how you feel over time with simple, flexible mood entries. Spot patterns and reflect on your emotional wellbeing at a glance.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon" aria-hidden="true" style="color:#b8c5d0;">◻</span>
+      <h2 class="feature-title">Habit Tracking</h2>
+      <p class="feature-desc">Build and maintain routines with daily habit tracking. Mark completions, build streaks, and keep momentum on the things that matter to you.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon" aria-hidden="true" style="color:#b8c5d0;">◈</span>
+      <h2 class="feature-title">Private by Default</h2>
+      <p class="feature-desc">All data stays on your device. No account required to get started. Optional cloud sync is available if you want access across multiple devices.</p>
+    </div>
+  </div>
+
+  <div class="developer">
+    <p class="developer-label">Developed by</p>
+    <p class="developer-name">
+      <a href="https://grayconsultingmanagement.com">Gray Consulting &amp; Management LLC</a>
+    </p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Gray Consulting &amp; Management LLC</p>
+    <nav>
+      <a href="/PolarBalance/privacy">Privacy</a>
+      <a href="/PolarBalance/terms">Terms</a>
+      <a href="/PolarBalance/support">Support</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

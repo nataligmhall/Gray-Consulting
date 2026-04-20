@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Polar Balance</title>
+  <meta name="description" content="Get help with Polar Balance — mood and habit tracking support, FAQs, and contact information." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #141414;
+      --border: rgba(255,255,255,0.08);
+      --text: #e8e4de;
+      --muted: rgba(232,228,222,0.45);
+      --accent: #b8c5d0;
+      --highlight: #d4e0e8;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 2.25rem 4rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    header .brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    header .separator { color: var(--muted); font-size: 0.8rem; }
+
+    header .doc-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 4rem 7rem;
+    }
+
+    .title-block {
+      margin-bottom: 4rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .title-block h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .title-block p {
+      font-size: 1rem;
+      color: rgba(232,228,222,0.65);
+      margin: 0;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.75rem 2rem;
+      margin-bottom: 4rem;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .contact-card strong {
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .contact-card p {
+      font-size: 0.95rem;
+      color: rgba(232,228,222,0.75);
+      margin: 0;
+    }
+
+    .contact-card a {
+      color: var(--highlight);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212,224,232,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .contact-card a:hover { border-color: var(--highlight); }
+
+    section { margin-bottom: 3rem; }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: rgba(232,228,222,0.8);
+      margin-bottom: 0.85rem;
+      font-size: 0.975rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .faq { display: flex; flex-direction: column; gap: 0; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-q {
+      font-size: 0.975rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .faq-a a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(180,200,210,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .faq-a a:hover { border-color: var(--accent); }
+
+    .crisis-note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.75rem;
+      margin-top: 4rem;
+      border-radius: 2px;
+    }
+
+    .crisis-note p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .crisis-note strong {
+      color: rgba(232,228,222,0.7);
+      font-weight: 500;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(180,200,210,0.3);
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-color: var(--accent); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+    footer nav { display: flex; gap: 2rem; }
+
+    footer nav a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: none;
+    }
+
+    footer nav a:hover { color: var(--text); }
+
+    @media (max-width: 640px) {
+      header, footer { padding: 1.5rem 1.75rem; }
+      main { padding: 3rem 1.75rem 5rem; }
+      .contact-card { padding: 1.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="brand" href="/PolarBalance">Polar Balance</a>
+    <span class="separator">—</span>
+    <span class="doc-label">Support</span>
+  </header>
+
+  <main>
+
+    <div class="title-block">
+      <h1>Support</h1>
+      <p>Questions about Polar Balance? We're here to help.</p>
+    </div>
+
+    <div class="contact-card">
+      <strong>Contact Us</strong>
+      <p>Email us at <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a> — we respond to all inquiries within 1–2 business days.</p>
+    </div>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq">
+
+        <div class="faq-item">
+          <p class="faq-q">Does Polar Balance require an account?</p>
+          <p class="faq-a">No. You can use the app in guest mode with no account required. All data stays on your device. An account is only needed if you want to enable optional cloud sync across multiple devices.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">How do I enable cloud sync?</p>
+          <p class="faq-a">Sign in with Google or Apple from within the app. Once signed in, your data will sync automatically across any device using the same account. You can disable sync or sign out at any time.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Is my data private?</p>
+          <p class="faq-a">Yes. In guest mode, your data never leaves your device. If you enable cloud sync, your data is stored securely via Firebase (Google's cloud infrastructure) and is never sold or shared with third parties. See our <a href="/PolarBalance/privacy">Privacy Policy</a> for full details.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">How do I delete my data?</p>
+          <p class="faq-a">To remove local data, uninstall the app or use the in-app reset option. To delete cloud-synced data and your account, email us at <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a> and we will permanently remove all associated data within 30 days.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Does the app work offline?</p>
+          <p class="faq-a">Yes. Polar Balance is offline-first. All core features — mood logging, habit tracking, and notes — work without an internet connection. Cloud sync, when enabled, occurs in the background when connectivity is available.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">I lost my data after reinstalling. Can I recover it?</p>
+          <p class="faq-a">If you were using guest mode, data is stored locally and cannot be recovered after uninstallation. If you had cloud sync enabled and were signed in, your data will restore automatically when you sign back in to the same account. This is why we recommend enabling cloud sync if data continuity matters to you.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Is Polar Balance a medical app?</p>
+          <p class="faq-a">No. Polar Balance is a personal self-reflection and habit tracking tool. It is not a medical device, diagnostic tool, or substitute for professional mental health care. Please consult a qualified healthcare provider for any medical concerns.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">What platforms is Polar Balance available on?</p>
+          <p class="faq-a">Polar Balance is available on iOS. If you have questions about availability on other platforms, contact us at <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a>.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">I found a bug. How do I report it?</p>
+          <p class="faq-a">Please email a description of the issue — including your device model and iOS version — to <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a>. We take all bug reports seriously and will follow up promptly.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="crisis-note">
+      <p><strong>Not a crisis resource.</strong> If you are experiencing a mental health emergency or having thoughts of self-harm, please contact emergency services or a crisis helpline in your region. In the United States, call or text <strong>988</strong> to reach the Suicide and Crisis Lifeline.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Gray Consulting &amp; Management LLC</p>
+    <nav>
+      <a href="/PolarBalance/privacy">Privacy</a>
+      <a href="/PolarBalance/terms">Terms</a>
+      <a href="/PolarBalance/support">Support</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
