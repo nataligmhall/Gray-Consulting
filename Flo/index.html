@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flo — Gray Consulting</title>
+  <meta name="description" content="Case study: Content Strategy & Growth for Flo, the #1 most downloaded women's health app.">
+  <meta name="robots" content="index, follow">
+  <script>
+    (function() {
+      var t = localStorage.getItem('gc-theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../gray-site.css">
+  <style>
+    :root {
+      --text: var(--fg);
+      --text-dim: var(--dim);
+      --text-mute: var(--mute);
+      --accent: var(--signal);
+      --surface-2: color-mix(in srgb, var(--surface) 90%, var(--border) 10%);
+      --font-display: 'Inter', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --max: 1200px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body { overflow-x: hidden; }
+
+    .page { position: relative; z-index: 2; }
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 32px 80px;
+    }
+    .hero-inner {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-mute);
+      margin-bottom: 20px;
+    }
+    .title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: .96;
+      letter-spacing: -.045em;
+      margin-bottom: 24px;
+    }
+    .title em { font-style: italic; color: var(--text-dim); }
+    .lead {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-dim);
+    }
+    .hand-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      line-height: 1.15;
+      color: var(--accent);
+    }
+    .hand-note .spark { font-size: 13px; opacity: .75; }
+
+    .hero-photos { display: grid; grid-template-columns: 1fr; align-items: start; }
+    .hero-lottie {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .meta-strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 120px; }
+    .meta-strip-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .meta-cell {
+      padding: 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-right: 1px solid var(--border);
+    }
+    .meta-cell:last-child { border-right: none; }
+    .meta-cell:not(:first-child) { padding-left: 32px; }
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-mute);
+    }
+    .meta-value {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .section { padding: 0 0 120px; }
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+    .section-head .line { flex: 1; height: 1px; background: var(--border); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .card {
+      padding: 36px 32px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-index {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .card-desc { font-size: 14px; color: var(--text-dim); line-height: 1.7; }
+
+    .results-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .results-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(37,99,235,0.18);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .result-stat {
+      padding: 30px 28px;
+      background: var(--signal-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #000;
+    }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #000;
+    }
+    .results-body { display: flex; flex-direction: column; gap: 16px; }
+    .results-body p { font-size: 15px; line-height: 1.75; color: var(--text-dim); }
+
+    .results-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .photo {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+      aspect-ratio: 4 / 5;
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: block;
+      background: var(--surface-2);
+      overflow: hidden;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0 50px;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+    .footer-links { display: flex; gap: 16px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 1040px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 44px; }
+      .meta-strip-inner { grid-template-columns: repeat(2, 1fr); }
+      .meta-cell:nth-child(2n) { border-right: none; }
+      .meta-cell:nth-child(n+3) { border-top: 1px solid var(--border); }
+      .meta-cell { padding: 22px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .results-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding: 92px 20px 56px; }
+      .container, .footer-inner { padding: 0 20px; }
+      .title { font-size: clamp(38px, 12vw, 62px); }
+      .meta-strip-inner { padding: 0 20px; }
+      .meta-cell:not(:first-child) { padding-left: 0; }
+      .results-stats { grid-template-columns: 1fr; }
+      .results-photos { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <a href="../index.html" class="nav-brand" aria-label="Gray Consulting home">
+        <svg viewBox="0 0 120 120" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <rect x="16" y="16" width="12" height="88" opacity="0.18"/>
+          <rect x="34" y="19" width="12" height="82" opacity="0.38"/>
+          <rect x="52" y="16" width="12" height="88" opacity="0.6"/>
+          <rect x="70" y="19" width="12" height="82" opacity="0.82"/>
+          <rect x="88" y="16" width="12" height="88" opacity="1"/>
+        </svg>
+        <span>Gray</span>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <span class="nav-tag">Consulting &amp; Management</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#systems">Systems</a>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" type="button">
+          <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+      <a href="../index.html#contact" class="nav-cta">Start a project →</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-inner container">
+        <div>
+          <div class="kicker">Case Study</div>
+          <h1 class="title">Flo<br><em>Femtech Leader</em></h1>
+          <p class="lead">
+            Flo is the world's leading women's health app, used by over 380 million people worldwide.
+            As of November 2024, Flo has over 70 million monthly active users, making it a powerful
+            force in the digital health space.
+          </p>
+          <div style="margin-top:22px;">
+            <span class="hand-note"><span class="spark">✦</span> education that actually converts</span>
+          </div>
+        </div>
+        <div class="hero-photos" aria-label="Flo campaign reel">
+          <div class="hero-lottie">
+            <div class="video-frame" id="floLottie" aria-label="Flo animation reel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="meta-strip" aria-label="Project details">
+      <div class="meta-strip-inner">
+        <div class="meta-cell">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">Content Strategy &amp; Growth</span>
+        </div>
+        <div class="meta-cell">
+          <span class="meta-label">Industry</span>
+          <span class="meta-value">Femtech · iOS App</span>
+        </div>
+        <div class="meta-cell">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">1 year</span>
+        </div>
+        <div class="meta-cell">
+          <span class="meta-label">Scale</span>
+          <span class="meta-value">70M monthly active users</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section reveal" id="challenges">
+      <div class="container">
+        <div class="section-head">
+          <span>Challenges</span>
+          <span class="line"></span>
+          <span>From awareness to conversion at scale</span>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-index">01 / 03</div>
+            <h2 class="card-title">Monetization &amp; Conversion</h2>
+            <p class="card-desc">Launch a new in-app stories feature valuable enough to convert free users to paid premium plans.</p>
+          </article>
+          <article class="card">
+            <div class="card-index">02 / 03</div>
+            <h2 class="card-title">Safe, Daily Content</h2>
+            <p class="card-desc">Produce high-frequency pregnancy and health stories that are educational, friendly, and never fear-based.</p>
+          </article>
+          <article class="card">
+            <div class="card-index">03 / 03</div>
+            <h2 class="card-title">Operational Scale</h2>
+            <p class="card-desc">Recruit, vet, and manage specialist writers to support large daily output for both freemium and paid content tracks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="approach">
+      <div class="container">
+        <div class="section-head">
+          <span>Approach</span>
+          <span class="line"></span>
+          <span>Outsourced content leadership</span>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-index">01 / 03</div>
+            <h2 class="card-title">Team Building</h2>
+            <p class="card-desc">Built and managed a specialist team of 20+ writers across mental health, recipes, exercise, sexual health, and medical topics.</p>
+          </article>
+          <article class="card">
+            <div class="card-index">02 / 03</div>
+            <h2 class="card-title">Content Strategy</h2>
+            <p class="card-desc">Led the pregnancy-track strategy end-to-end, collaborating with medical professionals for accuracy, tone, and empathy.</p>
+          </article>
+          <article class="card">
+            <div class="card-index">03 / 03</div>
+            <h2 class="card-title">System Management</h2>
+            <p class="card-desc">Oversaw the full story engine and editorial workflow, ensuring every piece shipped consistently and on-brand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="results">
+      <div class="container">
+        <div class="section-head">
+          <span>Results</span>
+          <span class="line"></span>
+          <span>A system that still runs</span>
+        </div>
+        <div style="margin-bottom:22px;">
+          <span class="hand-note"><span class="spark">✦</span> a content system ready to go</span>
+        </div>
+        <div class="results-layout">
+          <div>
+            <div class="results-stats">
+              <div class="result-stat">
+                <span class="stat-num">Live</span>
+                <span class="stat-label">Story system still active in Flo app</span>
+              </div>
+              <div class="result-stat">
+                <span class="stat-num">20+</span>
+                <span class="stat-label">Specialized writers assembled and managed</span>
+              </div>
+            </div>
+            <div class="results-body">
+              <p>The primary outcome was an enduring content system. The full story pipeline we designed remains a core feature used by millions of users every day.</p>
+              <p>We also left behind an operational asset: a trained and managed creator network with clear workflows and a vetted database for future scale.</p>
+            </div>
+          </div>
+          <div class="results-photos" aria-label="Flo content samples">
+            <figure class="photo"><img src="1.jpg" alt="Flo visual 1" loading="lazy"></figure>
+            <figure class="photo"><img src="2.jpg" alt="Flo visual 2" loading="lazy"></figure>
+            <figure class="photo"><img src="3.jpg" alt="Flo visual 3" loading="lazy"></figure>
+            <figure class="photo"><img src="4.jpg" alt="Flo visual 4" loading="lazy"></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; 2026 Gray Consulting &amp; Management LLC</span>
+        <div class="footer-links">
+          <a href="../index.html#work">More work</a>
+          <a href="mailto:contact@grayconsultingmanagement.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function initThemeToggle() {
+      var toggle = document.getElementById('themeToggle');
+      var iconSun = document.getElementById('iconSun');
+      var iconMoon = document.getElementById('iconMoon');
+      if (!toggle || !iconSun || !iconMoon) return;
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('gc-theme', theme);
+        iconSun.style.display = theme === 'dark' ? '' : 'none';
+        iconMoon.style.display = theme === 'dark' ? 'none' : '';
+      }
+      applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+      toggle.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        applyTheme(cur === 'dark' ? 'light' : 'dark');
+      });
+    })();
+
+    (function initScrollReveal() {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function(el) { el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function(el) { io.observe(el); });
+    })();
+
+    (function initFloReel() {
+      var target = document.getElementById('floLottie');
+      if (!target || !window.lottie) return;
+      var jsonPath = window.location.protocol === 'file:' ? 'flo.json' : '/Flo/flo.json';
+      window.lottie.loadAnimation({
+        container: target,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: jsonPath,
+        rendererSettings: { preserveAspectRatio: 'xMidYMid meet' }
+      });
+    })();
+  </script>
+</body>
+</html>

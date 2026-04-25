@@ -1,0 +1,92 @@
+/* Gray Consulting — shared shell (keep in sync with index.html homepage) */
+/* ─────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────── */
+:root {
+  --bg:          #F9F9F9;
+  --surface:     #FFFFFF;
+  --border:      #E5E5E5;
+  --border-2:    #D4D4D4;
+  --fg:          #0A0A0A;
+  --dim:         #0A0A0A;
+  --mute:        #737373;
+  --signal:      #2563EB;
+  --signal-bg:   rgba(37,99,235,0.08);
+  --signal-glow: rgba(37,99,235,0.2);
+  --nav-bg:      rgba(249,249,249,0.92);
+  --ease:        cubic-bezier(0.22,1,0.36,1);
+}
+[data-theme="dark"] {
+  --bg:          #0A0A0A;
+  --surface:     #111111;
+  --border:      #1F1F1F;
+  --border-2:    #2A2A2A;
+  --fg:          #FAFAFA;
+  --dim:         #FAFAFA;
+  --mute:        #6B6B6B;
+  --signal:      #60A5FA;
+  --signal-bg:   rgba(96,165,250,0.09);
+  --signal-glow: rgba(96,165,250,0.2);
+  --nav-bg:      rgba(10,10,10,0.92);
+}
+
+/* ─────────────────────────────────────────
+   RESET (shell)
+───────────────────────────────────────── */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg); color:var(--fg);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:16px; line-height:1.5;
+  transition:background .3s ease,color .3s ease;
+}
+a { color:inherit; text-decoration:none; }
+button { font-family:inherit; cursor:pointer; }
+input,textarea { font-family:inherit; }
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+.nav {
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; height:60px;
+  background:var(--nav-bg); backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand {
+  display:flex; align-items:center; gap:10px;
+  font-size:14px; font-weight:500; letter-spacing:-0.01em;
+}
+.nav-sep { width:1px; height:14px; background:var(--border-2); }
+.nav-tag { font-size:12px; color:var(--mute); }
+.nav-links { display:flex; align-items:center; gap:28px; }
+.nav-links a { font-size:13px; color:var(--dim); transition:color .2s; }
+.nav-links a:hover { color:var(--fg); }
+.theme-toggle {
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px; border:1px solid var(--border-2); border-radius:6px;
+  background:var(--surface); color:var(--dim);
+  transition:border-color .2s,color .2s;
+}
+.theme-toggle:hover { border-color:var(--signal); color:var(--signal); }
+.theme-toggle svg { width:15px; height:15px; }
+.nav-cta {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:8px 16px; border-radius:6px;
+  background:var(--fg); color:var(--bg); border:none;
+  font-size:13px; font-weight:500;
+  text-decoration:none;
+  transition:opacity .2s;
+}
+.nav-cta:hover { opacity:.8; }
+
+
+@media (max-width:960px) {
+  .nav-tag,.nav-cta { display:none; }
+}
+@media (max-width:600px) {
+  .nav-links a { display:none; }
+  .nav-links .theme-toggle { display:flex; }
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use — Polar Balance</title>
+  <meta name="robots" content="noindex, follow">
+  <script>
+    (function() {
+      var t = localStorage.getItem('gc-theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../gray-site.css">
+  <style>
+    :root {
+      --text: var(--fg);
+      --text-dim: var(--dim);
+      --text-mute: var(--mute);
+      --muted: var(--mute);
+      --accent: var(--signal);
+      --highlight: var(--signal);
+      --font-display: 'Inter', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --max: 1200px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    [data-theme="light"] .disclaimer-banner p {
+      color: var(--fg);
+    }
+
+    body { overflow-x: hidden; line-height: 1.75; min-height: 100vh; }
+
+    .page {
+      position: relative;
+      z-index: 2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    header {
+      padding-top: 120px;
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    header .brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    header .separator { color: var(--muted); font-size: 0.8rem; }
+
+    header .doc-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 100px 0 7rem;
+    }
+
+    .nav-brand { color: var(--fg); }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: none;
+    }
+
+    .title-block {
+      margin-bottom: 4rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .title-block h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .disclaimer-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3.5rem;
+      border-radius: 2px;
+    }
+
+    .disclaimer-banner p {
+      font-size: 0.9rem;
+      color: var(--highlight);
+      line-height: 1.65;
+    }
+
+    .disclaimer-banner strong {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    section { margin-bottom: 3rem; }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 0.85rem;
+      font-size: 0.975rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.85rem;
+    }
+
+    ul li {
+      font-size: 0.975rem;
+      color: var(--text);
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-2);
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-color: var(--accent); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0 50px;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+
+    .footer-links a {
+      color: var(--muted);
+      border-bottom: none;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 960px) {
+      .nav-brand .tag { display: none; }
+      .nav-links a { display: none; }
+    }
+    @media (max-width: 640px) {
+      .container, .footer-inner, .nav { padding-left: 20px; padding-right: 20px; }
+      main { padding-top: 180px; padding-bottom: 5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <a href="../../index.html" class="nav-brand" aria-label="Gray Consulting home">
+        <svg viewBox="0 0 120 120" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <rect x="16" y="16" width="12" height="88" opacity="0.18"/>
+          <rect x="34" y="19" width="12" height="82" opacity="0.38"/>
+          <rect x="52" y="16" width="12" height="88" opacity="0.6"/>
+          <rect x="70" y="19" width="12" height="82" opacity="0.82"/>
+          <rect x="88" y="16" width="12" height="88" opacity="1"/>
+        </svg>
+        <span>Gray</span>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <span class="nav-tag">Polar Balance</span>
+      </a>
+      <div class="nav-links">
+        <a href="../../index.html#systems">Systems</a>
+        <a href="../../index.html#work">Work</a>
+        <a href="../../index.html#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" type="button">
+          <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+      <a href="../../index.html#contact" class="nav-cta">Start a project →</a>
+    </nav>
+
+    <main class="container" style="padding-top: 100px;">
+
+    <div class="title-block">
+      <h1>Terms of Use</h1>
+      <p class="meta">Effective Date: March 5, 2026 &nbsp;·&nbsp; Last Updated: March 5, 2026</p>
+    </div>
+
+    <div class="disclaimer-banner">
+      <strong>Important — Not a Medical Tool</strong>
+      <p>Polar Balance is a personal mood and habit tracking application only. It is not a medical device, clinical tool, diagnostic instrument, or substitute for professional mental health care. Use of this app does not constitute a therapeutic relationship. If you are experiencing a mental health crisis, please contact a qualified healthcare provider or emergency services immediately.</p>
+    </div>
+
+    <section>
+      <h2>1. Agreement to Terms</h2>
+      <p>By downloading, accessing, or using Polar Balance ("the App"), you agree to be bound by these Terms of Use ("Terms"). These Terms constitute a legally binding agreement between you and Gray Consulting &amp; Management LLC ("we," "us," or "our"). If you do not agree to these Terms, do not use the App.</p>
+    </section>
+
+    <section>
+      <h2>2. Description of the App</h2>
+      <p>Polar Balance is a personal wellness application that allows users to log moods, track habits, and record personal notes over time. The App is intended solely as a self-reflection and personal journaling tool.</p>
+      <p>Polar Balance is <strong>not</strong>:</p>
+      <ul>
+        <li>A medical device or FDA-regulated software.</li>
+        <li>A tool for diagnosing, treating, curing, or preventing any mental health condition, including bipolar disorder.</li>
+        <li>A replacement for therapy, psychiatry, medication, or any other form of clinical care.</li>
+        <li>A crisis resource or emergency service.</li>
+      </ul>
+      <p>Any information, patterns, or insights surfaced by the App are for personal informational purposes only and should not be interpreted as medical advice.</p>
+    </section>
+
+    <section>
+      <h2>3. Eligibility</h2>
+      <p>Polar Balance is intended for users 13 and older. Users under 18 should have parental guidance when using the app.</p>
+    </section>
+
+    <section>
+      <h2>4. Account Responsibilities</h2>
+      <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to notify us immediately of any unauthorized use at <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a>. Guest mode is available if you prefer to use the App without creating an account; in that case, all data remains on your device only.</p>
+    </section>
+
+    <section>
+      <h2>5. Acceptable Use</h2>
+      <p>You agree to use the App only for lawful, personal purposes. You may not:</p>
+      <ul>
+        <li>Attempt to reverse engineer, decompile, or tamper with any part of the App.</li>
+        <li>Use the App in any way that could harm, disable, or impair its functionality or infrastructure.</li>
+        <li>Use automated scripts, bots, or other tools to access or interact with the App.</li>
+        <li>Attempt to gain unauthorized access to any systems or data associated with the App.</li>
+        <li>Share, sell, or transfer your account to another person.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Health and Safety</h2>
+      <p>Polar Balance is designed for general wellness self-tracking and is not a substitute for professional medical advice, diagnosis, or treatment. Never disregard or delay seeking professional care because of something you have logged, read, or inferred from this App.</p>
+      <p>If you are experiencing thoughts of self-harm or suicide, or are in crisis, please contact emergency services or a crisis helpline in your region immediately. In the United States, you may call or text <strong>988</strong> to reach the Suicide and Crisis Lifeline.</p>
+    </section>
+
+    <section>
+      <h2>7. Intellectual Property</h2>
+      <p>All content, design, code, and features of Polar Balance are the intellectual property of Gray Consulting &amp; Management LLC. You may not reproduce, distribute, or create derivative works from any part of the App without our express written permission.</p>
+      <p>Content you enter into the App — your mood logs, habit records, and notes — remains yours. You grant us a limited license to store and process that content solely for the purpose of operating the App on your behalf.</p>
+    </section>
+
+    <section>
+      <h2>8. Disclaimers and Limitation of Liability</h2>
+      <p>The App is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of harmful components.</p>
+      <p>To the fullest extent permitted by applicable law, Gray Consulting &amp; Management LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the App, including any reliance on data or insights generated by the App.</p>
+      <p>Our total liability to you for any claim arising out of these Terms or the App shall not exceed the amount you paid us in the twelve months preceding the claim, or $10 USD if you have paid nothing.</p>
+    </section>
+
+    <section>
+      <h2>9. Third-Party Services</h2>
+      <p>The App uses Google Firebase for backend infrastructure, and supports sign-in via Google and Apple. Your use of the App is also subject to the terms of those services. We are not responsible for the practices or content of any third-party service. See our <a href="/PolarBalance/privacy">Privacy Policy</a> for a full list of integrations.</p>
+    </section>
+
+    <section>
+      <h2>10. Modifications</h2>
+      <p>We reserve the right to modify or discontinue the App at any time without notice. We may also update these Terms from time to time. Continued use of the App after changes are posted constitutes your acceptance of the revised Terms. The "Last Updated" date above reflects the most recent revision.</p>
+    </section>
+
+    <section>
+      <h2>11. Termination</h2>
+      <p>We reserve the right to suspend or terminate your access to the App at any time, with or without cause. You may stop using the App and request account deletion at any time by contacting <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>12. Governing Law</h2>
+      <p>These Terms are governed by the laws of the United States and the state in which Gray Consulting &amp; Management LLC is incorporated, without regard to its conflict of law provisions. Any disputes shall be resolved in the courts of that jurisdiction.</p>
+    </section>
+
+    <section>
+      <h2>13. Contact</h2>
+      <p>Questions about these Terms may be directed to:<br>
+      <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a><br>
+      Gray Consulting &amp; Management LLC, United States</p>
+    </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; 2026 Gray Consulting &amp; Management LLC</span>
+        <div class="footer-links">
+          <a href="../privacy/index.html">Privacy</a>
+          <a href="index.html">Terms</a>
+          <a href="../support/index.html">Support</a>
+          <a href="mailto:contact@grayconsultingmanagement.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function initThemeToggle() {
+      var toggle = document.getElementById('themeToggle');
+      var iconSun = document.getElementById('iconSun');
+      var iconMoon = document.getElementById('iconMoon');
+      if (!toggle || !iconSun || !iconMoon) return;
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('gc-theme', theme);
+        iconSun.style.display = theme === 'dark' ? '' : 'none';
+        iconMoon.style.display = theme === 'dark' ? 'none' : '';
+      }
+      applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+      toggle.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        applyTheme(cur === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Polar Balance</title>
+  <meta name="robots" content="noindex, follow">
+  <script>
+    (function() {
+      var t = localStorage.getItem('gc-theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../gray-site.css">
+  <style>
+    :root {
+      --text: var(--fg);
+      --text-dim: var(--dim);
+      --text-mute: var(--mute);
+      --accent: var(--signal);
+      --highlight: var(--signal);
+      --font-display: 'Inter', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --max: 1200px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    [data-theme="light"] .disclaimer-banner p {
+      color: var(--fg);
+    }
+
+    body { overflow-x: hidden; line-height: 1.7; }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    header {
+      padding-top: 120px;
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    header .brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    header .separator { color: var(--text-mute); font-size: 0.8rem; }
+
+    header .doc-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      font-family: var(--font-mono);
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto 0;
+      padding: 100px 0 7rem;
+    }
+
+    .nav-brand { color: var(--fg); }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: none;
+    }
+
+    .title-block {
+      margin-bottom: 4rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .title-block h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      font-family: var(--font-mono);
+    }
+
+    .disclaimer-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3.5rem;
+      border-radius: 2px;
+    }
+
+    .disclaimer-banner p {
+      font-size: 0.9rem;
+      color: var(--highlight);
+      line-height: 1.65;
+    }
+
+    .disclaimer-banner strong {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    section { margin-bottom: 3rem; }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 0.85rem;
+      font-size: 0.975rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.85rem;
+    }
+
+    ul li {
+      font-size: 0.975rem;
+      color: var(--text);
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--text-mute);
+    }
+
+    .services-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .services-table th {
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      font-family: var(--font-mono);
+      padding: 0 1rem 0.75rem 0;
+    }
+
+    .services-table td {
+      color: var(--text);
+      padding: 0.75rem 1rem 0.75rem 0;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    .services-table tr:last-child td { border-bottom: none; }
+
+    .services-table td:first-child {
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+      padding-right: 1.5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-2);
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-color: var(--accent); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0 50px;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-mute);
+      border-bottom: none;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 960px) {
+      .nav-brand .tag { display: none; }
+      .nav-links a { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .container, .footer-inner, .nav {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      main {
+        padding-top: 180px;
+        padding-bottom: 5rem;
+      }
+      .services-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <a href="../../index.html" class="nav-brand" aria-label="Gray Consulting home">
+        <svg viewBox="0 0 120 120" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <rect x="16" y="16" width="12" height="88" opacity="0.18"/>
+          <rect x="34" y="19" width="12" height="82" opacity="0.38"/>
+          <rect x="52" y="16" width="12" height="88" opacity="0.6"/>
+          <rect x="70" y="19" width="12" height="82" opacity="0.82"/>
+          <rect x="88" y="16" width="12" height="88" opacity="1"/>
+        </svg>
+        <span>Gray</span>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <span class="nav-tag">Polar Balance</span>
+      </a>
+      <div class="nav-links">
+        <a href="../../index.html#systems">Systems</a>
+        <a href="../../index.html#work">Work</a>
+        <a href="../../index.html#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" type="button">
+          <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+      <a href="../../index.html#contact" class="nav-cta">Start a project →</a>
+    </nav>
+
+    <main class="container" style="padding-top: 100px;">
+
+    <div class="title-block">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective Date: March 5, 2026 &nbsp;·&nbsp; Last Updated: March 6, 2026</p>
+    </div>
+
+    <div class="disclaimer-banner">
+      <strong>Not a Medical Tool</strong>
+      <p>Polar Balance is a personal mood and habit tracking application. It is not a medical device, diagnostic tool, or treatment for bipolar disorder or any other mental health condition. Nothing in this app or these documents constitutes medical advice. Always consult a qualified healthcare professional for diagnosis, treatment, or guidance regarding mental health.</p>
+    </div>
+
+    <section>
+      <h2>1. Who We Are</h2>
+      <p>Polar Balance is developed and operated by Gray Consulting &amp; Management LLC ("we," "us," or "our"). Questions about this policy can be directed to <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>2. What Information We Collect</h2>
+      <p>We collect only what is necessary to operate the app:</p>
+      <ul>
+        <li><strong>Account information</strong> — depending on how you sign in, this may include your email address, a display name, or a unique identifier provided by Google or Apple. We never receive your Google or Apple account password.</li>
+        <li><strong>App data you enter</strong> — mood logs, habit entries, notes, and any other content you choose to record within the app.</li>
+        <li><strong>Guest mode</strong> — if you use the app without signing in, no account information is collected. Your data remains on your device only and is never transmitted to our servers.</li>
+      </ul>
+      <p>We do not collect payment information, precise location data, contact lists, or health records from third parties. We do not use Firebase Analytics, Firebase Crashlytics, or any third-party advertising SDK.</p>
+    </section>
+
+    <section>
+      <h2>3. How Your Data Is Stored</h2>
+      <p>Polar Balance uses a <strong>local-first storage model</strong>. All data you enter is stored on your device by default and remains fully accessible offline. Your data does not leave your device unless you explicitly choose otherwise.</p>
+      <p><strong>Cloud sync is entirely optional.</strong> If you choose to enable it, your data is synced to Firebase (Google's cloud infrastructure) and associated with your account, allowing access across multiple devices. Enabling cloud sync requires signing in.</p>
+      <p>You may disable cloud sync or delete your account at any time. Upon account deletion, all cloud-stored data is permanently removed from our servers (see §9).</p>
+    </section>
+
+    <section>
+      <h2>4. How We Use Your Information</h2>
+      <p>Your data is used solely to:</p>
+      <ul>
+        <li>Provide and maintain the core functionality of Polar Balance.</li>
+        <li>Authenticate your account and, if cloud sync is enabled, keep your data consistent across your devices.</li>
+        <li>Respond to support requests or account deletion inquiries you initiate.</li>
+      </ul>
+      <p>We do not use your data to build advertising profiles, conduct marketing campaigns, sell or license data to third parties, or perform any form of clinical or medical research.</p>
+    </section>
+
+    <section>
+      <h2>5. Legal Basis for Processing (GDPR — EU/EEA/UK Users)</h2>
+      <p>If you are located in the European Union, European Economic Area, or United Kingdom, we process your personal data only where we have a valid legal basis under Article 6 of the GDPR (or the UK GDPR). The legal bases we rely on are:</p>
+      <ul>
+        <li><strong>Performance of a contract (Art. 6(1)(b))</strong> — When you create an account and enable cloud sync, processing your account identifier and synced app data is necessary to provide the service you have requested.</li>
+        <li><strong>Legitimate interests (Art. 6(1)(f))</strong> — We process minimal technical data to maintain the security and integrity of the app where this does not override your fundamental rights and freedoms. We do not rely on legitimate interests for any marketing or profiling purpose.</li>
+        <li><strong>Legal obligation (Art. 6(1)(c))</strong> — We may process or retain data where required by applicable law, court order, or regulatory obligation.</li>
+      </ul>
+      <p>We do not rely on consent as the legal basis for core app functionality. Optional features such as cloud sync are initiated by you when you sign in; no processing of cloud data occurs unless you take that affirmative step.</p>
+    </section>
+
+    <section>
+      <h2>6. Third-Party Services</h2>
+      <p>Polar Balance integrates with the following third-party services. Each is governed by its own privacy policy, linked below.</p>
+
+      <table class="services-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Privacy Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Firebase (Google)</td>
+            <td>Authentication; optional cloud storage and sync</td>
+            <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google Sign-In</td>
+            <td>Optional sign-in method via your Google account</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Sign in with Apple</td>
+            <td>Optional sign-in method via your Apple ID</td>
+            <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>When you use Google Sign-In or Sign in with Apple, those services may share a name, email address, or unique identifier with us solely for authentication purposes. Apple's private email relay is supported — you may use a hidden email address if you prefer not to share your real one.</p>
+      <p>Beyond the services listed above, we do not integrate any third-party analytics, crash reporting, or advertising tools.</p>
+    </section>
+
+    <section>
+      <h2>7. International Data Transfers</h2>
+      <p>Gray Consulting &amp; Management LLC is based in the United States. If you are located in the European Union, European Economic Area, or United Kingdom, your personal data (when cloud sync is enabled) is transferred to and processed in the United States via Firebase (Google).</p>
+      <p>For EEA and UK users, Google transfers personal data under the <strong>Standard Contractual Clauses (SCCs)</strong> approved by the European Commission, which provide appropriate safeguards for cross-border data transfers. You can review Google's data transfer mechanisms at <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a>.</p>
+      <p><strong>EU/EEA Representative:</strong> Pursuant to Article 27 GDPR, Gray Consulting & Management LLC has designated Natali Gray Misak Hall, residing in Lisbon, Portugal, as its EU/EEA representative. Data subject requests and privacy inquiries from EU/EEA residents may be directed to <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a> and will be handled within the timeframes prescribed by applicable law.</p>
+    </section>
+
+    <section>
+      <h2>8. Data Sharing</h2>
+      <p>We do not sell, rent, or share your personal information with third parties, except:</p>
+      <ul>
+        <li>With the service providers listed in §6, strictly to the extent necessary to operate the app.</li>
+        <li>If required by law, valid legal process, or to protect the rights and safety of users or others.</li>
+        <li>In connection with a business transfer, merger, or acquisition — in which case you will be notified in advance and your rights under this policy will be preserved.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>9. Your Rights and Data Deletion</h2>
+      <p>You have rights over the personal data we hold about you. To exercise any of these rights, contact us at <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a>. We will respond within 30 days (or within any shorter period required by applicable law).</p>
+      <ul>
+        <li><strong>Right to access (Art. 15 GDPR)</strong> — request a copy of the personal data we hold about you.</li>
+        <li><strong>Right to rectification (Art. 16 GDPR)</strong> — request correction of inaccurate or incomplete data.</li>
+        <li><strong>Right to erasure / right to be forgotten (Art. 17 GDPR)</strong> — request deletion of your personal data where there is no overriding legal reason to retain it.</li>
+        <li><strong>Right to restriction of processing (Art. 18 GDPR)</strong> — request that we limit how we use your data in certain circumstances.</li>
+        <li><strong>Right to data portability (Art. 20 GDPR)</strong> — receive your data in a structured, machine-readable format or have it transferred to another controller where technically feasible.</li>
+        <li><strong>Right to object (Art. 21 GDPR)</strong> — object to processing based on our legitimate interests; we will cease processing unless we can demonstrate compelling legitimate grounds that override your interests.</li>
+        <li><strong>Right to withdraw consent</strong> — where any processing is based on your consent, you may withdraw it at any time without affecting the lawfulness of processing before withdrawal.</li>
+        <li><strong>Rights related to automated decision-making (Art. 22 GDPR)</strong> — Polar Balance does not engage in any automated decision-making or profiling that produces legal or similarly significant effects. No action is required on your part.</li>
+        <li><strong>Right to lodge a complaint</strong> — you have the right to lodge a complaint with your national or regional data protection supervisory authority at any time. EU residents can find their authority at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">edpb.europa.eu</a>. UK residents may contact the <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">ICO</a>. We would, however, appreciate the opportunity to address your concerns before you contact a supervisory authority.</li>
+      </ul>
+      <p><strong>How to delete your data:</strong></p>
+      <ul>
+        <li><strong>Local data</strong> — delete all on-device data at any time by uninstalling the app or using the in-app reset option.</li>
+        <li><strong>Cloud data</strong> — if cloud sync is enabled, contact us to request permanent deletion of all associated server-side data.</li>
+        <li><strong>Account deletion</strong> — removes your authentication record and all synced cloud data from our servers.</li>
+      </ul>
+      <p>California residents also have rights under CCPA/CPRA, including the right to know, delete, and opt out of the sale of personal information (we do not sell personal information). Canadian residents have rights under PIPEDA. We will honor all valid requests in accordance with applicable law.</p>
+    </section>
+
+    <section>
+      <h2>10. Data Retention</h2>
+      <p>We retain personal data only for as long as necessary to fulfil the purposes described in this policy, or as required by law.</p>
+      <ul>
+        <li><strong>Account data (cloud sync users)</strong> — retained for as long as your account remains active. Permanently deleted within 30 days of an account deletion request.</li>
+        <li><strong>App data synced to cloud</strong> — retained for as long as cloud sync is enabled and your account is active. Permanently deleted within 30 days of an account or data deletion request.</li>
+        <li><strong>Support correspondence</strong> — emails and support-related communications are retained for up to 2 years for follow-up and record-keeping, then deleted.</li>
+        <li><strong>Local-only data (guest mode)</strong> — stored exclusively on your device under your control. We have no visibility into or retention window over local-only data; it is deleted when you uninstall the app or reset app storage.</li>
+      </ul>
+      <p>Where we are required to retain data by law (e.g., for tax or regulatory purposes), we will retain it only for the duration required and will restrict its use to that purpose.</p>
+    </section>
+
+    <section>
+      <h2>11. Data Security</h2>
+      <p>Local data is stored using your device's native secure storage. Cloud data, when sync is enabled, is protected by Firebase's encryption in transit (TLS) and at rest. You are responsible for maintaining the confidentiality of your account credentials. No method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
+    </section>
+
+    <section>
+      <h2>12. Children's Privacy</h2>
+      <p>Polar Balance is intended for users aged 13 and older (under US law / COPPA). In the European Union and EEA, the minimum age for digital services consent is <strong>16 years old</strong> (or lower where an EU member state has set a minimum of 13), unless parental consent is obtained. We do not knowingly collect personal data from children below the applicable minimum age in their jurisdiction. If you believe a child has provided us with personal data without appropriate consent, please contact us at <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a> and we will promptly delete it.</p>
+    </section>
+
+    <section>
+      <h2>13. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we make material changes, we will notify you via an in-app notice or, where we have your email address, by email, at least 30 days before the changes take effect. The "Last Updated" date at the top of this page reflects the most recent revision.</p>
+      <p>For EU/EEA/UK users: where a change affects data processed on the basis of consent, we will seek fresh consent rather than relying on continued use of the app as acceptance.</p>
+    </section>
+
+    <section>
+      <h2>14. Contact</h2>
+      <p>For any questions or concerns about this Privacy Policy, or to exercise your data rights:<br>
+      <strong>Email:</strong> <a href="mailto:contact@grayconsultingmanagement.com">contact@grayconsultingmanagement.com</a><br>
+      <strong>Organization:</strong> Gray Consulting &amp; Management LLC, United States</p>
+      <p>EU/EEA residents may also lodge a complaint with their national data protection authority. A list of EU supervisory authorities is available at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">edpb.europa.eu</a>. UK residents may contact the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">ico.org.uk</a>.</p>
+    </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; 2026 Gray Consulting &amp; Management LLC</span>
+        <div class="footer-links">
+          <a href="index.html">Privacy</a>
+          <a href="../terms/index.html">Terms</a>
+          <a href="../support/index.html">Support</a>
+          <a href="mailto:contact@grayconsultingmanagement.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function initThemeToggle() {
+      var toggle = document.getElementById('themeToggle');
+      var iconSun = document.getElementById('iconSun');
+      var iconMoon = document.getElementById('iconMoon');
+      if (!toggle || !iconSun || !iconMoon) return;
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('gc-theme', theme);
+        iconSun.style.display = theme === 'dark' ? '' : 'none';
+        iconMoon.style.display = theme === 'dark' ? 'none' : '';
+      }
+      applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+      toggle.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        applyTheme(cur === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivienne Cosmetics — Gray Consulting</title>
+  <meta name="description" content="Case study: Social Marketing & Community strategy for Vivienne Cosmetics' US and EU market entry.">
+  <meta name="robots" content="index, follow">
+  <script>
+    (function() {
+      var t = localStorage.getItem('gc-theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../gray-site.css">
+  <style>
+    /* Legacy case-study tokens → Gray shell (gray-site.css) */
+    :root {
+      --text: var(--fg);
+      --text-dim: var(--dim);
+      --text-mute: var(--mute);
+      --accent: var(--signal);
+      --highlight: var(--signal);
+      --surface-2: color-mix(in srgb, var(--surface) 90%, var(--border) 10%);
+      --font-display: 'Inter', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --max: 1200px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --bg-bars-rgb: 10, 10, 10;
+    }
+    [data-theme="dark"] {
+      --bg-bars-rgb: 232, 232, 232;
+    }
+
+    body { overflow-x: hidden; }
+
+    .page {
+      position: relative;
+      z-index: 2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── Shared photo styles ── */
+    .photo {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-2);
+      color: var(--text-mute);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-dots {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, var(--border-2) 1px, transparent 1px);
+      background-size: 28px 28px; opacity: .55;
+    }
+
+    .hero-glow {
+      position: absolute; top: -220px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 560px; pointer-events: none;
+      background: radial-gradient(ellipse at center, var(--signal-glow) 0%, transparent 65%);
+      filter: blur(50px); opacity: .55;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      position: relative;
+    }
+
+    .kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-mute);
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: .96;
+      letter-spacing: -.045em;
+      margin-bottom: 24px;
+    }
+
+    .title em {
+      font-style: italic;
+      color: var(--text-dim);
+    }
+
+    .lead {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-dim);
+    }
+
+    /* Hero media slot */
+    .hero-photos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      align-items: start;
+    }
+
+    .hero-lottie {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    /* ── Meta strip ── */
+    .meta-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 120px;
+    }
+
+    .meta-strip-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .meta-cell {
+      padding: 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-right: 1px solid var(--border);
+    }
+
+    .meta-cell:last-child { border-right: none; }
+    .meta-cell:not(:first-child) { padding-left: 32px; }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-mute);
+    }
+
+    .meta-value {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    /* ── Sections ── */
+    .section {
+      padding: 0 0 120px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+
+    .section-head .line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card {
+      padding: 40px 36px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card-index {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    /* ── Photo break (2 wide photos between sections) ── */
+    .photo-break {
+      padding: 0 0 120px;
+    }
+
+    .photo-break-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .photo-break .photo {
+      aspect-ratio: 3 / 4;
+    }
+
+    /* ── Results ── */
+    .results-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .results-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .results-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(37,99,235,0.18);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
+
+    .result-stat {
+      padding: 36px 32px;
+      background: var(--signal-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #000000;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #000000;
+    }
+
+    .results-body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .results-body p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-dim);
+    }
+
+    /* 2 photos stacked on the right of results */
+    .results-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .results-photos .photo {
+      aspect-ratio: 4 / 5;
+    }
+
+    .results-photos .photo:nth-child(2) {
+      transform: translateY(24px);
+    }
+
+    /* ── Closing photos ── */
+    .closing-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      align-items: start;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: block;
+      background: var(--surface-2);
+      overflow: hidden;
+    }
+
+    .closing-layout .photo {
+      aspect-ratio: 4 / 5;
+    }
+
+    .closing-photo-label {
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-mute);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0 50px;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+
+    /* ── Hand notes (Caveat) ── */
+    .hand-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Caveat', cursive;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--signal);
+      line-height: 1;
+    }
+    .hand-note .spark { font-size: 13px; opacity: .65; }
+
+    /* ── Card hover ── */
+    .card { transition: background 0.2s ease; }
+    .card:hover { background: var(--surface); }
+
+    /* Wide card (last in odd-count grid) */
+    .card--wide { grid-column: span 2; }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .reveal:nth-child(3) { transition-delay: 0.16s; }
+    .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photos {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+      }
+
+      .meta-strip-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .meta-cell:nth-child(2) { border-right: none; }
+      .meta-cell:nth-child(3) { border-top: 1px solid var(--border); }
+      .meta-cell:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+
+      .cards { grid-template-columns: 1fr; }
+
+      .photo-break-inner { grid-template-columns: 1fr 1fr; }
+
+      .results-layout { grid-template-columns: 1fr; gap: 40px; }
+
+      .closing-layout { grid-template-columns: 1fr 1fr; }
+
+      .nav-brand .tag { display: none; }
+      .nav-links a { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .container, .footer-inner, .nav, .meta-strip-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero {
+        padding-top: 120px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .title { font-size: clamp(38px, 12vw, 62px); }
+
+      .meta-strip-inner { grid-template-columns: 1fr 1fr; }
+
+      .cards { border-left: none; border-right: none; }
+      .card { padding: 28px 20px; }
+
+      .photo-break-inner { grid-template-columns: 1fr; }
+
+      .results-photos { grid-template-columns: 1fr 1fr; }
+      .results-photos .photo:nth-child(2) { transform: none; }
+
+      .closing-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <nav class="nav">
+      <a href="../index.html" class="nav-brand" aria-label="Gray Consulting home">
+        <svg viewBox="0 0 120 120" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <rect x="16" y="16" width="12" height="88" opacity="0.18"/>
+          <rect x="34" y="19" width="12" height="82" opacity="0.38"/>
+          <rect x="52" y="16" width="12" height="88" opacity="0.6"/>
+          <rect x="70" y="19" width="12" height="82" opacity="0.82"/>
+          <rect x="88" y="16" width="12" height="88" opacity="1"/>
+        </svg>
+        <span>Gray</span>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <span class="nav-tag">Consulting &amp; Management</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#systems">Systems</a>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" type="button">
+          <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+      <a href="../index.html#contact" class="nav-cta">Start a project →</a>
+    </nav>
+
+    <!-- ── Hero: title left, lottie right ── -->
+    <section class="hero">
+      <div class="hero-dots" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner container">
+        <div>
+          <div class="kicker">Case Study</div>
+          <h1 class="title">Vivienne Cosmetics<br><em>Aesthetic cosmetics brand</em></h1>
+          <p class="lead">
+            A global makeup powerhouse that first rose to prominence in CIS countries in 2006.
+            Today, Vivienne Cosmetics AG holds a leading EU position, reporting 75 million units
+            sold across more than 25 markets and 40,000 distribution points in 2024.
+          </p>
+          <div style="margin-top:28px;">
+            <span class="hand-note"><span class="spark">✦</span> brand new market, built from scratch</span>
+          </div>
+        </div>
+        <div class="hero-photos" aria-label="Campaign reel">
+          <div class="hero-lottie">
+            <div
+              class="video-frame"
+              id="vsLottie"
+              aria-label="Vivienne Cosmetics campaign reel animation"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Meta strip ── -->
+    <div class="meta-strip" aria-label="Project details">
+      <div class="meta-strip-inner">
+        <div class="meta-cell">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">Social Marketing &amp; Community</span>
+        </div>
+        <div class="meta-cell">
+          <span class="meta-label">Industry</span>
+          <span class="meta-value">Beauty</span>
+        </div>
+        <div class="meta-cell">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">2 Years</span>
+        </div>
+        <div class="meta-cell">
+          <span class="meta-label">Markets</span>
+          <span class="meta-value">US &amp; EU</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Challenges ── -->
+    <section class="section" id="challenges">
+      <div class="container">
+        <div class="section-head">
+          <span>Challenges</span>
+          <span class="line"></span>
+          <span>Entering new markets</span>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-index">01 / 04</div>
+            <h2 class="card-title">Market Entry</h2>
+            <p class="card-desc">Despite global success, Vivienne Cosmetics needed to build brand awareness from scratch in the highly competitive US and EU markets.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">02 / 04</div>
+            <h2 class="card-title">Content Strategy</h2>
+            <p class="card-desc">They required a partner to audit their existing content library and build a content calendar that would resonate with a new US and EU audience.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">03 / 04</div>
+            <h2 class="card-title">Community Management</h2>
+            <p class="card-desc">They needed a native-English speaker to manage their social community and ensure an authentic local voice across every interaction.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">04 / 04</div>
+            <h2 class="card-title">Audience Engagement</h2>
+            <p class="card-desc">They sought expert guidance on how to develop and execute campaigns, such as giveaways, that would drive new engagement and followers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Photo break: 2 photos between Challenges & Approach ── -->
+    <div class="photo-break container">
+      <div class="photo-break-inner">
+        <figure class="photo">
+          <img src="1.jpg" alt="Campaign photo 1" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="photo-placeholder" style="display:none">Photo 1</div>
+        </figure>
+        <figure class="photo">
+          <img src="2.jpg" alt="Campaign photo 2" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="photo-placeholder" style="display:none">Photo 2</div>
+        </figure>
+      </div>
+    </div>
+
+    <!-- ── Approach ── -->
+    <section class="section" id="approach">
+      <div class="container">
+        <div class="section-head">
+          <span>Approach</span>
+          <span class="line"></span>
+          <span>Multi-pronged brand building</span>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-index">01 / 03</div>
+            <h2 class="card-title">Content &amp; Creative Strategy</h2>
+            <p class="card-desc">A curated blend of visually stunning product photos and trend-based reels, carefully coordinated with EU and US product launch teams to ensure every campaign was timely and relevant.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-index">02 / 03</div>
+            <h2 class="card-title">Localized Tone of Voice</h2>
+            <p class="card-desc">The brand's voice was adapted to resonate with US and EU cultural nuances, written as if by a native speaker who had grown up in the market, not a translation.</p>
+          </article>
+          <article class="card card--wide reveal">
+            <div class="card-index">03 / 03</div>
+            <h2 class="card-title">UGC Curation</h2>
+            <p class="card-desc">Responsible for curating and reposting the best user-generated content to brand channels, amplifying creators' work and fostering a community-led presence that felt organic and authentic.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Results: text left, 2 staggered photos right ── -->
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-head">
+          <span>Results</span>
+          <span class="line"></span>
+          <span>18 months of growth</span>
+        </div>
+        <div style="margin-bottom:32px;">
+          <span class="hand-note"><span class="spark">✦</span> 7M views in 3 months — not bad</span>
+        </div>
+        <div class="results-layout">
+          <div class="results-left">
+            <div class="results-stats">
+              <div class="result-stat reveal">
+                <span class="stat-num">34K</span>
+                <span class="stat-label">TikTok followers built from zero</span>
+              </div>
+              <div class="result-stat reveal">
+                <span class="stat-num">7K</span>
+                <span class="stat-label">Instagram followers</span>
+              </div>
+              <div class="result-stat reveal">
+                <span class="stat-num">7M</span>
+                <span class="stat-label">Views in three months</span>
+              </div>
+            </div>
+          </div>
+          <div class="results-photos">
+            <figure class="photo">
+              <img src="3.jpg" alt="Campaign photo 3" loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="photo-placeholder" style="display:none">Photo 3</div>
+            </figure>
+            <figure class="photo">
+              <img src="4.jpg" alt="Campaign photo 4" loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="photo-placeholder" style="display:none">Photo 4</div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final photos ── -->
+    <section class="section" id="reel">
+      <div class="container">
+        <div class="section-head">
+          <span>Photo Reel</span>
+          <span class="line"></span>
+          <span>Campaign content</span>
+        </div>
+        <div class="closing-layout">
+          <figure class="photo">
+            <img src="5.jpg" alt="Campaign photo 5" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">Photo 5</div>
+          </figure>
+          <figure class="photo">
+            <img src="6.jpg" alt="Campaign photo 6" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">Photo 6</div>
+          </figure>
+          <figure class="photo">
+            <img src="7.jpg" alt="Campaign photo 7" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">Photo 7</div>
+          </figure>
+          <figure class="photo">
+            <img src="8.jpg" alt="Campaign photo 8" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">Photo 8</div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; 2026 Gray Consulting &amp; Management LLC</span>
+        <div class="footer-links">
+          <a href="mailto:contact@grayconsultingmanagement.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function initThemeToggle() {
+      var toggle = document.getElementById('themeToggle');
+      var iconSun = document.getElementById('iconSun');
+      var iconMoon = document.getElementById('iconMoon');
+      if (!toggle || !iconSun || !iconMoon) return;
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('gc-theme', theme);
+        iconSun.style.display = theme === 'dark' ? '' : 'none';
+        iconMoon.style.display = theme === 'dark' ? 'none' : '';
+      }
+      applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+      toggle.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        applyTheme(cur === 'dark' ? 'light' : 'dark');
+      });
+    })();
+
+    (function initScrollReveal() {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function(el) { el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function(el) { io.observe(el); });
+    })();
+
+    (function initVivienneReel() {
+      var target = document.getElementById('vsLottie');
+      if (!target || !window.lottie) return;
+      var jsonPath = window.location.protocol === 'file:'
+        ? 'viviennesabo.json'
+        : '/VivienneSabo/viviennesabo.json';
+      window.lottie.loadAnimation({
+        container: target,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: jsonPath,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid meet'
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polar Balance — The Story</title>
+  <meta name="description" content="A mood, habit, and health tracker built by one person, for someone I love. Here's the story behind Polar Balance." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Polar Balance — The Story" />
+  <meta property="og:description" content="A mood, habit, and health tracker built by one person, for someone I love." />
+  <meta property="og:image" content="/PolarBalance/PolarBalance.png" />
+  <meta property="og:type" content="website" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('gc-theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../gray-site.css">
+  <style>
+    :root {
+      --text: var(--fg);
+      --muted: var(--mute);
+      --accent: var(--signal);
+      --highlight: var(--signal);
+      --border: var(--border-2);
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      width: 100%;
+    }
+
+    .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      margin-bottom: 5rem;
+    }
+
+    .hero-identity {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07);
+      flex-shrink: 0;
+    }
+
+    .app-icon img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .app-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+
+    .app-meta-name {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .app-meta-tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-headline {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(2.6rem, 6vw, 3.75rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-body {
+      font-size: 1.08rem;
+      color: var(--dim);
+      line-height: 1.85;
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── App Store button ── */
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--text);
+      color: var(--bg);
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .store-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .store-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── Screenshots ── */
+    .screenshots-section { margin-bottom: 5rem; }
+
+    .screenshots-scroll {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      padding-bottom: 1.25rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      margin: 0 -2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar { height: 2px; }
+    .screenshots-scroll::-webkit-scrollbar-track { background: var(--border); border-radius: 2px; }
+    .screenshots-scroll::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
+
+    .screenshot-item {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      width: 210px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .screenshot-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ── Video ── */
+    .video-section { margin-bottom: 5rem; }
+
+    .video-container {
+      margin-top: 1.5rem;
+      width: 100%;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+      aspect-ratio: 9 / 16;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ── Story ── */
+    .story-section { margin-bottom: 5rem; }
+
+    .story-section h2 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .story-section p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .story-section p:last-child { margin-bottom: 0; }
+
+    .story-section em { font-style: italic; color: var(--highlight); }
+
+    /* ── Features ── */
+    .features-section { margin-bottom: 5rem; }
+
+    .features-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .feature-item {
+      padding: 1.5rem 1.75rem;
+      background: var(--surface);
+    }
+
+    .feature-item:nth-child(odd) { border-right: 1px solid var(--border); }
+    .feature-item:nth-child(n+3) { border-top: 1px solid var(--border); }
+
+    .feature-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-detail {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Privacy callout ── */
+    .privacy-note {
+      padding: 1.5rem 2rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      background: var(--surface);
+      margin-bottom: 4.5rem;
+    }
+
+    .privacy-note p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .privacy-note strong { color: var(--text); font-weight: 500; }
+
+    .privacy-note a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-2);
+      transition: border-color 0.2s;
+    }
+
+    .privacy-note a:hover { border-color: var(--accent); }
+
+    /* ── Bottom CTA ── */
+    .cta-section {
+      text-align: center;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-section .store-btn { margin-bottom: 1.25rem; }
+
+    .cta-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+    footer nav { display: flex; gap: 2rem; }
+
+    footer nav a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer nav a:hover { color: var(--text); }
+
+    @media (max-width: 700px) {
+      footer { padding: 1.5rem 1.75rem; }
+      main { padding: 3.5rem 1.75rem 5rem; }
+      .hero-headline { font-size: 2.4rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-item:nth-child(odd) { border-right: none; }
+      .feature-item { border-top: 1px solid var(--border); border-right: none !important; }
+      .feature-item:first-child { border-top: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../../index.html" class="nav-brand" aria-label="Gray Consulting home">
+      <svg viewBox="0 0 120 120" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <rect x="16" y="16" width="12" height="88" opacity="0.18"/>
+        <rect x="34" y="19" width="12" height="82" opacity="0.38"/>
+        <rect x="52" y="16" width="12" height="88" opacity="0.6"/>
+        <rect x="70" y="19" width="12" height="82" opacity="0.82"/>
+        <rect x="88" y="16" width="12" height="88" opacity="1"/>
+      </svg>
+      <span>Gray</span>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <span class="nav-tag">Polar Balance</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html#systems">Systems</a>
+      <a href="../../index.html#work">Work</a>
+      <a href="../../index.html#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" type="button">
+        <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+    <a href="../../index.html#contact" class="nav-cta">Start a project →</a>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+
+      <div class="hero-identity">
+        <div class="app-icon">
+          <img src="../PolarBalance.png" alt="Polar Balance app icon" />
+        </div>
+        <div class="app-meta">
+          <span class="app-meta-name">Polar Balance</span>
+          <span class="app-meta-tag">iOS &middot; Free</span>
+        </div>
+      </div>
+
+      <span class="label">The story</span>
+      <h1 class="hero-headline">Built for someone<br><em>I love.</em></h1>
+
+      <p class="hero-body">
+        Someone I love needed a better way to manage their daily wellness — mood, sleep, medications, and habits. The apps that existed were either too clinical, too cluttered, or paywalled. So I built one from scratch. This is that app.
+      </p>
+
+      <a href="https://apps.apple.com/us/app/polar-balance/id6760113310" class="store-btn" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        Download on the App Store
+      </a>
+
+    </section>
+
+    <!-- ── Screenshots ── -->
+    <section class="screenshots-section">
+      <span class="label">Screenshots</span>
+      <div class="screenshots-scroll">
+        <div class="screenshot-item">
+          <img src="splash.png" alt="Polar Balance welcome screen: Find your balance, one day at a time" loading="lazy" />
+        </div>
+        <div class="screenshot-item">
+          <img src="dashboard.png" alt="Daily habit dashboard showing streaks and goal status" loading="lazy" />
+        </div>
+        <div class="screenshot-item">
+          <img src="mood.png" alt="Mood journal with brain climate selector and stability calendar" loading="lazy" />
+        </div>
+        <div class="screenshot-item">
+          <img src="stability.png" alt="Stability calendar with historical snapshot and sleep stats" loading="lazy" />
+        </div>
+        <div class="screenshot-item">
+          <img src="reminders.png" alt="Daily reminder time picker" loading="lazy" />
+        </div>
+        <div class="screenshot-item">
+          <img src="screenshot-6.png" alt="Mind Journal: add notes to any mood entry, anytime" loading="lazy" />
+        </div>
+        <div class="screenshot-item">
+          <img src="screenshot-7.png" alt="Customize app colors to fit your style with themes like Arctic Moss, Aurora Borealis, and more" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Demo video ── -->
+    <section class="video-section">
+      <span class="label">Demo</span>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/cTxYDXkwy_A"
+          title="Polar Balance demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- ── Story ── -->
+    <section class="story-section">
+      <span class="label">Why this exists</span>
+      <h2>One person. No funding. Just something that needed to exist.</h2>
+      <p>
+        I spent months building this, learning as I went, rebuilding things that didn't feel right, and constantly asking one question: <em>would they actually use this every day?</em> Not "is this a good product" but "does this feel like something made for a real human."
+      </p>
+      <p>
+        Managing daily health means logging things you'd rather forget — bad sleep, missed meds, a hard mood day. The friction of that has to be as low as possible, and the app has to feel safe. No judgement. No ads. No company reading your entries.
+      </p>
+      <p>
+        The penguin was her idea.
+      </p>
+    </section>
+
+    <!-- ── What it does ── -->
+    <section class="features-section">
+      <span class="label">What it does</span>
+      <div class="features-grid">
+        <div class="feature-item">
+          <p class="feature-name">Mood journal</p>
+          <p class="feature-detail">Daily check-ins with mood, brain climate, and free-form notes. Spot patterns over time.</p>
+        </div>
+        <div class="feature-item">
+          <p class="feature-name">Habit &amp; goal streaks</p>
+          <p class="feature-detail">Set personal goals, mark daily completions, and build consecutive-day streaks.</p>
+        </div>
+        <div class="feature-item">
+          <p class="feature-name">Stability calendar</p>
+          <p class="feature-detail">Visual month view showing your mood history — good days, hard days, and trends.</p>
+        </div>
+        <div class="feature-item">
+          <p class="feature-name">Sleep &amp; meds tracking</p>
+          <p class="feature-detail">Log sleep quality and medication adherence. See 14-day irritability and sleep trends.</p>
+        </div>
+        <div class="feature-item">
+          <p class="feature-name">Smart reminders</p>
+          <p class="feature-detail">Daily check-in notifications with quick time presets. Never forget to log.</p>
+        </div>
+        <div class="feature-item">
+          <p class="feature-name">Color themes</p>
+          <p class="feature-detail">Pick a palette that feels like you with themes like Arctic Moss, Aurora Borealis, Midnight Sun, and more.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Privacy note ── -->
+    <div class="privacy-note">
+      <p>
+        <strong>Privacy first.</strong> No account required to start. All data is stored locally on your device. Optional iCloud sync available if you want it. No ads, no analytics, no selling your data. <a href="../privacy/index.html">Full privacy policy &rarr;</a>
+      </p>
+    </div>
+
+    <!-- ── Bottom CTA ── -->
+    <section class="cta-section">
+      <a href="https://apps.apple.com/us/app/polar-balance/id6760113310" class="store-btn" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        Download on the App Store &mdash; Free
+      </a>
+      <p class="cta-meta">iOS only &middot; Works offline &middot; No account required</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Gray Consulting &amp; Management LLC</p>
+    <nav>
+      <a href="../privacy/index.html">Privacy</a>
+      <a href="../terms/index.html">Terms</a>
+      <a href="../support/index.html">Support</a>
+    </nav>
+  </footer>
+
+  <script>
+    (function initThemeToggle() {
+      var toggle = document.getElementById('themeToggle');
+      var iconSun = document.getElementById('iconSun');
+      var iconMoon = document.getElementById('iconMoon');
+      if (!toggle || !iconSun || !iconMoon) return;
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('gc-theme', theme);
+        iconSun.style.display = theme === 'dark' ? '' : 'none';
+        iconMoon.style.display = theme === 'dark' ? 'none' : '';
+      }
+      applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+      toggle.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
+        applyTheme(cur === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
+</body>
+</html>
